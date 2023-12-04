@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props')" />
   <Import Project="..\packages\NUnit.4.0.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.4.0.1\build\NUnit.props')" />
   <Import Project="..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props" Condition="Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props')" />
   <PropertyGroup>
@@ -163,6 +164,7 @@
     <Error Condition="!Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets'))" />
     <Error Condition="!Exists('..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit.4.0.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.4.0.1\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props'))" />
   </Target>
   <Import Project="..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets" Condition="Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets')" />
   <Import Project="..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets" Condition="Exists('..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets')" />
