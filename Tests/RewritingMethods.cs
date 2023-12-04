@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 [TestFixture]
 public class RewritingMethods
@@ -21,7 +22,7 @@ public class RewritingMethods
         AssemblyWeaver.TestListener.Reset();
         var sample = (dynamic)Activator.CreateInstance(sampleClassType);
         var exception = Assert.Throws<ArgumentException>(() => sample.SomeMethod(string.Empty, string.Empty));
-        Assert.AreEqual("nonEmptyArg", exception.ParamName);
+        ClassicAssert.AreEqual("nonEmptyArg", exception.ParamName);
     }
 
     [Test]
@@ -54,8 +55,8 @@ public class RewritingMethods
         AssemblyWeaver.TestListener.Reset();
         var sample = (dynamic)Activator.CreateInstance(specialClassType);
         var exception = Assert.Throws<ArgumentException>(() => sample.SomeMethodAsync(string.Empty, string.Empty));
-        Assert.AreEqual("nonEmptyArg", exception.ParamName);
-        Assert.AreEqual("[EmptyStringGuard] nonEmptyArg is an empty string.\r\nParameter name: nonEmptyArg", exception.Message);
+        ClassicAssert.AreEqual("nonEmptyArg", exception.ParamName);
+        ClassicAssert.AreEqual("[EmptyStringGuard] nonEmptyArg is an empty string.\r\nParameter name: nonEmptyArg", exception.Message);
     }
 
     [Test]

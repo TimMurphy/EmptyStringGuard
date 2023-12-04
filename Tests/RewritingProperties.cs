@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 [TestFixture]
 public class RewritingProperties
@@ -19,8 +20,8 @@ public class RewritingProperties
         AssemblyWeaver.TestListener.Reset();
         var sample = (dynamic)Activator.CreateInstance(sampleClassType);
         var exception = Assert.Throws<ArgumentException>(() => { sample.NonEmptyProperty = string.Empty; });
-        Assert.AreEqual("value", exception.ParamName);
-        Assert.AreEqual("[EmptyStringGuard] Cannot set the value of property 'System.String SimpleClass::NonEmptyProperty()' to an empty string.\r\nParameter name: value", exception.Message);
+        ClassicAssert.AreEqual("value", exception.ParamName);
+        ClassicAssert.AreEqual("[EmptyStringGuard] Cannot set the value of property 'System.String SimpleClass::NonEmptyProperty()' to an empty string.\r\nParameter name: value", exception.Message);
     }
 
     [Test]

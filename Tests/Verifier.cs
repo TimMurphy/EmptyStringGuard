@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 public static class Verifier
 {
     public static void Verify(string beforeAssemblyPath, string afterAssemblyPath)
@@ -10,7 +11,7 @@ public static class Verifier
         var before = Validate(beforeAssemblyPath);
         var after = Validate(afterAssemblyPath);
         var message = $"Failed processing {Path.GetFileName(afterAssemblyPath)}\r\n{after}";
-        Assert.AreEqual(TrimLineNumbers(before), TrimLineNumbers(after), message);
+        ClassicAssert.AreEqual(TrimLineNumbers(before), TrimLineNumbers(after), message);
     }
 
     static string Validate(string assemblyPath2)
