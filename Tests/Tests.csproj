@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props" Condition="Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props')" />
   <Import Project="..\packages\NUnit.4.0.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.4.0.1\build\NUnit.props')" />
+  <Import Project="..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props" Condition="Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -45,10 +45,10 @@
       <HintPath>..\packages\ApprovalUtilities.5.8.0\lib\net462\ApprovalUtilities.dll</HintPath>
     </Reference>
     <Reference Include="DiffEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c7a34512ecd69090, processorArchitecture=MSIL">
-      <HintPath>..\packages\DiffEngine.11.0.0\lib\net48\DiffEngine.dll</HintPath>
+      <HintPath>..\packages\DiffEngine.13.0.2\lib\net48\DiffEngine.dll</HintPath>
     </Reference>
     <Reference Include="EmptyFiles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c7a34512ecd69090, processorArchitecture=MSIL">
-      <HintPath>..\packages\EmptyFiles.4.1.0\lib\net461\EmptyFiles.dll</HintPath>
+      <HintPath>..\packages\EmptyFiles.5.0.0\lib\net461\EmptyFiles.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -84,6 +84,9 @@
       <HintPath>..\packages\NUnit.4.0.1\lib\net462\nunit.framework.legacy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
     </Reference>
@@ -93,6 +96,13 @@
       <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -109,6 +119,9 @@
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="TextCopy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1ca091877d12ca03, processorArchitecture=MSIL">
@@ -146,11 +159,11 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\NUnit.4.0.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.4.0.1\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\packages\EmptyFiles.4.1.0\build\EmptyFiles.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmptyFiles.4.1.0\build\EmptyFiles.targets'))" />
     <Error Condition="!Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ApprovalTests.5.8.0\build\ApprovalTests.props'))" />
     <Error Condition="!Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets'))" />
+    <Error Condition="!Exists('..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.4.0.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.4.0.1\build\NUnit.props'))" />
   </Target>
-  <Import Project="..\packages\EmptyFiles.4.1.0\build\EmptyFiles.targets" Condition="Exists('..\packages\EmptyFiles.4.1.0\build\EmptyFiles.targets')" />
   <Import Project="..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets" Condition="Exists('..\packages\ApprovalTests.5.8.0\build\ApprovalTests.targets')" />
+  <Import Project="..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets" Condition="Exists('..\packages\EmptyFiles.5.0.0\build\EmptyFiles.targets')" />
 </Project>
